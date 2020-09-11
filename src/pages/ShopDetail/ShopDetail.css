@@ -1,0 +1,115 @@
+.shop_top{
+    background: #ffffff;
+    padding-bottom: .2rem;
+    overflow: hidden;
+}
+.shop_img img{
+    width: 100%;
+    height: 5rem;
+}
+.shop_p{
+    margin-top: .2rem;
+    overflow: hidden;
+    padding: .1rem .1rem .1rem .3rem;
+}
+.shop_name{
+    padding: .1rem;
+    float: left;
+    font-size: .45rem;
+}
+.shop_sc{
+    float: right;
+    padding: .1rem;
+    border: 0.01rem solid red;
+}
+.shop_price{
+    color: red;
+    float: left;
+    margin-top: .1rem;
+}
+.shop_ico{
+    padding: .05rem;
+    border: .01rem solid red;
+    margin-left: .2rem;
+    float: left;
+}
+.shop_priceold{
+    color: rgb(107, 107, 107);
+    text-decoration: line-through;
+    font-size: .3rem;
+    padding-left: .4rem;
+}
+.shop_des{
+    margin-top: .2rem;
+    background: #ffffff;
+}
+.shop_bottom{
+    width: 100%;
+    height: 10vh;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid rgb(88, 88, 88);
+}
+.shop_car{
+    width: 2.5rem;
+    height: 10vh;
+    float: right;
+    background-color: #ffa500;
+    border: none;
+    color: #fff;
+}
+.shop_mar{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.shop_con{
+    width: 100vw;
+    padding: 0.2rem;
+    background: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.shop_con_p{
+    margin-top: 0.1rem;
+    overflow: hidden;
+}
+.shop_con_img{
+    width: 40%;
+    height: 50%;
+    border-radius: 0.2rem;
+    float: left;
+}
+.shop_con_title{
+    float: left;
+    margin-left:0.2rem ;
+    font-size: 0.45rem;
+}
+.shop_spec_list{
+    padding: 0 .1rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border: 0.01rem solid #000;
+    margin: .1rem 0.2rem;
+    float: left;
+}
+.active{
+    background: red;
+}
+.shop_jia{
+    width: 2.5rem;
+    height: 1rem;
+    margin: 0.2rem 0.5rem;
+    float: right;
+    background-color: #ffa500;
+    border: none;
+    color: #fff;
+}

@@ -1,0 +1,68 @@
+.index{
+    font-size: .45rem;
+}
+.index footer {
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    border-top: 0.01rem solid #ccc;
+    /* height: 0.8rem; */
+    
+    display: flex;
+} 
+.index footer a{
+    flex: 1;
+    text-align: center;
+}
+.index footer a p{
+    width: 100%;
+    font-size: .25rem;
+    padding-bottom: 0.1rem;
+    text-align: center;
+    color: #333333;
+}
+.index footer a span{
+    margin: 0 auto;
+  display: block;
+  /* background-color: teal; */
+    width: .5rem;
+    height: .5rem;
+    padding: .1rem 0;
+}
+.index .bg1{
+    background: url(../../assets/img/tab_home_nor.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index .bg2{
+    background: url(../../assets/img/tab_menu_nor.png) no-repeat center ;
+    background-size: 0.5rem 0.5rem;
+}
+.index .bg3{
+    background: url(../../assets/img/tab_shopping_nor.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index .bg4{
+    background: url(../../assets/img/tab_me_nor.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index footer .select p{
+  color: orange;
+}
+.index footer .select .bg1{
+    background: url(../../assets/img/tab_home_hig.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index footer .select .bg2{
+    background: url(../../assets/img/tab_menu_hig.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index footer .select .bg3{
+    background: url(../../assets/img/tab_shopping_hig.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}
+.index footer .select .bg4{
+    background: url(../../assets/img/tab_me_hig.png) no-repeat center;
+    background-size: 0.5rem 0.5rem;
+}

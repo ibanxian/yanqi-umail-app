@@ -1,0 +1,113 @@
+/* 登陆注册 */
+.loginTop{
+    height: 0.8rem;
+    line-height:0.8rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    text-align: center;
+    background: #ff9900;
+    position: relative;
+}
+.loginTop .left{
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+}
+.loginTop .right{
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+}
+.input_list{
+    width: 80%;
+    margin: 2rem auto 0;
+    font-size: 0.2rem;
+    color: #666666;
+}
+.input_list input{
+    width: 100%;
+    height: 0.8rem;
+    border: none;
+    border-bottom: 1px solid #a3a3a3;
+    margin-top: 0.4rem;
+}
+.input_list input[type=text]:focus{ outline: none;}
+.input_list p{
+    text-align: right;
+    margin-top: 0.4rem;
+}
+.input_list button{
+    width: 100%;
+    margin-top: 0.4rem;
+    height: 0.8rem;
+    color: white;
+    background: #ff9900;
+    border: none;
+    border-radius: .2rem;
+}
+/* 首页 */
+.homeTop{
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.homeTop .logo{
+    width: 3.5rem;
+    height: .8rem;
+    margin-left: .2rem;
+    background: url(../img/logo.jpg) no-repeat;
+}
+.homeNav{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100vw;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.homeNav div{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size:.3rem ;
+}
+.homeNav i{
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+}
+.homeNav .homeNav_1{
+    background: url(../img/tab_home_nor.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .homeNav_2{
+    background: url(../img/tab_menu_nor.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .homeNav_3{
+    background: url(../img/tab_shopping_nor.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .homeNav_4{
+    background: url(../img/tab_me_nor.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .active .homeNav_1{
+    background: url(../img/tab_home_hig.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .active .homeNav_2{
+    background: url(../img/tab_menu_hig.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .active .homeNav_3{
+    background: url(../img/tab_shopping_hig.png) center no-repeat;
+    background-size: 30%;
+}
+.homeNav .active .homeNav_4{
+    background: url(../img/tab_me_hig.png) center no-repeat;
+    background-size: 30%;
+}

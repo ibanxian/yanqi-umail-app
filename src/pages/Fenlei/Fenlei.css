@@ -1,0 +1,72 @@
+.fenlei{
+    padding-top: 0.8rem;
+}
+.fenlei nav{
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0.8rem;
+    text-align: center;
+    line-height: .8rem;
+    background-color: orange;
+    color: white;
+    font-size: .4rem;
+}
+.fenlei .con{
+    display: flex;
+    /* height: 100vh; */
+}
+.fenlei .con .left{
+    width: 2.5rem;
+    font-size: .28rem;
+    /* background-color: thistle; */
+    /* height: 100%; */
+}
+.fenlei .con .left ul{
+    padding-top: .2rem;
+}
+.fenlei .con .left li{
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+}
+.fenlei .con .left .select{
+  color: orange;
+}
+.fenlei .con .right{
+   flex: 1;
+    /* background-color: rgb(114, 163, 180); */
+    /* height: 100%; */
+}
+.fenlei .con .right .box{
+  border: .02rem solid orange;
+  border-radius: .2rem;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  background-color: orchid;
+  float: left;
+  margin: 0.2rem .15rem;
+
+}
+.fenlei .con .right .box img{
+  border-radius: .2rem;
+  width: 100%;
+  height: 100%;
+}
+.fenlei .con .right .box p{
+    position: absolute;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .25rem;
+    color: #ffffff;
+    background-color: orange;
+    border-bottom-left-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}

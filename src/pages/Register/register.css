@@ -1,0 +1,46 @@
+.loginTop{
+    height: 0.8rem;
+    line-height:0.8rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    text-align: center;
+    background: #ff9900;
+    position: relative;
+}
+.loginTop .left{
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+}
+.loginTop .right{
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+}
+.input_list{
+    width: 80%;
+    margin: 2rem auto 0;
+    font-size: 0.2rem;
+    color: #666666;
+}
+.input_list input{
+    width: 100%;
+    height: 0.8rem;
+    border: none;
+    border-bottom: 1px solid #a3a3a3;
+    margin-top: 0.4rem;
+}
+.input_list input[type=text]:focus{ outline: none;}
+.input_list p{
+    text-align: right;
+    margin-top: 0.4rem;
+}
+.input_list button{
+    width: 100%;
+    margin-top: 0.4rem;
+    height: 0.8rem;
+    color: white;
+    background: #ff9900;
+    border: none;
+    border-radius: .2rem;
+}

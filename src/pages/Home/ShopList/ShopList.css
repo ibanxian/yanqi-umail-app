@@ -1,0 +1,38 @@
+.shopList{
+    width: 90%;
+    margin: 0.2rem 0 1.5rem;
+}
+.shopList a{
+    height: 3rem;
+    display: block;
+    margin: 0.2rem 0;
+}
+.shopList img{
+    width: 3rem;
+    height: 3rem;
+    margin-right: .2rem;
+    float: left;
+}
+.shopList p{
+    margin-top: .2rem;
+    color: #333333;
+    float: left;
+}
+.shopList span{
+    margin-top: 1rem;
+    width: 50%;
+    display: block;
+    float: left;
+    font-size:.5rem;
+    color: rgb(255, 1, 1);
+}
+.shopList button{
+    width: 2rem;
+    height: 0.7rem;
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    float: left;
+    margin-top: .1rem;
+    border-radius: 0.2rem;
+}
