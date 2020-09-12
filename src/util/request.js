@@ -1,10 +1,10 @@
 import axios from "axios"
 import qs from "qs"
-
+import { warningAlert } from "../util/alert"
 //请求拦截
 axios.interceptors.request.use(config => {
     // 如果是登录页面，直接反馈config
-    if (config.url === "/Lofin") {
+    if (config.url === "/login") {
         return config;
     }
     // 登录后把用户token写在请求头上
@@ -18,6 +18,14 @@ axios.interceptors.response.use(res => {
     console.group("=======请求地址：" + res.config.url + "=======")
     console.log(res);
     console.groupEnd()
+    // 如果登入过期，遇到以下情况
+    if (res.data.msg === "登录已过期或访问权限受限") {
+        warningAlert("登录已过期或访问权限受限")
+        // 清空info
+        sessionStorage.removeItem("token")
+        // 跳转到登录 
+        this.props.history.push("/login")
+    }
     return res;
 })
 //注册

@@ -11,6 +11,7 @@ export default class Car extends Component {
             carlist: [],
             editShow: false, // 编辑开关
             allShow: false, // 全选开关
+            allpreis: ""
         }
     }
     componentDidMount() {
@@ -27,6 +28,14 @@ export default class Car extends Component {
                 })
                 this.setState({
                     carlist: list,
+                })
+                // 总价
+                const { carlist } = this.state
+                let allpreis = carlist.reduce((val, item) => {
+                    return val += item.price * item.num
+                }, 0)
+                this.setState({
+                    allpreis
                 })
             }
         })
@@ -96,7 +105,7 @@ export default class Car extends Component {
         console.log(this.state.carlist);
     }
     render() {
-        const { carlist, editShow, allShow } = this.state
+        const { carlist, editShow, allShow ,allpreis} = this.state
         return (
             <div className="car">
                 <Header title="购物车" back></Header>
@@ -137,7 +146,7 @@ export default class Car extends Component {
                         <div className={editShow ? "car_edit_hig" : "car_edit_nosel"}></div>
                         <div>编辑</div>
                     </div>
-                    <div className="all">合计：￥888</div>
+                    <div className="all">合计：￥{allpreis}</div>
                     <div className="sum" onClick={() => this.sum()}>去结算</div>
                 </div>
             </div>
