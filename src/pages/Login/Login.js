@@ -28,7 +28,7 @@ export default class Login extends Component {
             if (res.data.code === 200) {
                 sessionStorage.setItem("uid", res.data.list.uid)
                 sessionStorage.setItem("token", res.data.list.token)
-                this.props.history.push("/index")
+                this.props.history.push("/Index")
                 Toast.success(res.data.msg, 1);
             } else {
                 Toast.fail(res.data.msg, 1);
@@ -41,15 +41,13 @@ export default class Login extends Component {
             <div>
                 <div className="loginTop">
                     <div>登录</div>
-                    <Link to="/register" className="right">注册</Link>
+                    <Link to="/Register" className="right">注册</Link>
                 </div>
                 <div className="input_list">
-                    <form>
-                        <input type="text" value={user.phone} onChange={(e) => this.changeUser(e, "phone")} placeholder="账号：" />
-                        <input type="text" value={user.password} onChange={(e) => this.changeUser(e, "password")} placeholder="密码：" />
-                        <p>忘记密码</p>
-                        <button onClick={() => this.login()}>登录</button>
-                    </form>
+                    <input type="text" value={user.phone} onChange={(e) => this.changeUser(e, "phone")} placeholder="账号：" />
+                    <input type="text" value={user.password} onChange={(e) => this.changeUser(e, "password")} placeholder="密码：" />
+                    <p>忘记密码</p>
+                    <button onClick={() => this.login()}>登录</button>
                 </div>
             </div>
         )

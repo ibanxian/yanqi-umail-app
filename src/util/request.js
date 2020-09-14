@@ -4,7 +4,7 @@ import { warningAlert } from "../util/alert"
 //请求拦截
 axios.interceptors.request.use(config => {
     // 如果是登录页面，直接反馈config
-    if (config.url === "/login") {
+    if (config.url === "/api/login" && config.url === "/api/register") {
         return config;
     }
     // 登录后把用户token写在请求头上
@@ -24,7 +24,8 @@ axios.interceptors.response.use(res => {
         // 清空info
         sessionStorage.removeItem("token")
         // 跳转到登录 
-        this.props.history.push("/login")
+        // this.props.history.push("/login")
+        window.open("/Login","_self")
     }
     return res;
 })
