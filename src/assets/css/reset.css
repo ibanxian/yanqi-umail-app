@@ -5,6 +5,11 @@
     font-size: .4rem;
 }
 .App{
-    padding-top:1rem;
     touch-action: none;
+}
+.index{
+    padding-top:1rem;
+}
+.ClassGoods{
+    margin-top:1.5rem;
 }

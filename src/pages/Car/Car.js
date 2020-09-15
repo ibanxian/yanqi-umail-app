@@ -10,18 +10,20 @@ export default class Car extends Component {
         this.state = {
             carlist: [],
             editShow: false, // 编辑开关
-            allShow: false, // 全选开关
             allpreis: 0, // 总价
 
         }
+        this.allShow = false;// 全选开关
         this.isok = true
     }
     componentDidMount() {
         this.reqlist()
     }
+
     // 请求购物车列表
     reqlist() {
         let uid = sessionStorage.getItem("uid")
+        // const { carlist } = this.state
         reqCarList({ uid: uid }).then(res => {
             this.isok = true
             if (res.data.code === 200) {
@@ -30,10 +32,10 @@ export default class Car extends Component {
                     item.checked = false
                 })
                 this.setState({
+                    ...this.state,
                     carlist: list,
-                    allShow: list.every(item => item.checked)
                 })
-
+                // this.allShow = carlist.every(item => item.checked)
             }
         })
     }
@@ -42,31 +44,44 @@ export default class Car extends Component {
         const { carlist } = this.state
         carlist[index].checked = !e.target.checked;
         this.setState({
+            ...this.state,
             carlist,
-            allShow: carlist.every(item => item.checked)
         })
+        this.allShow = carlist.every(item => item.checked)
+        this.allsum()
     }
     // 全选
     all() {
         const { carlist } = this.state
+        this.allShow = !this.allShow
         carlist.forEach(item => {
-            item.checked = !item.checked
+            item.checked = this.allShow
         })
         this.setState({
+            ...this.state,
             carlist,
-            allShow: !this.state.allShow
         })
-        // 总价
-        let allpreis = carlist.reduce((val, item) => {
-            return val += item.price * item.num
-        }, 0)
+        this.allsum()
+    }
+    // 总价
+    allsum() {
+        const { carlist, allpreis } = this.state
+        let sum = 0;
+        carlist.forEach(item => {
+            if (item.checked) {
+                sum += item.price * item.num
+            }
+        })
         this.setState({
-            allpreis
+            ...this.state,
+            allpreis: sum
         })
+        console.log(carlist, allpreis);
     }
     // 编辑
     edit() {
         this.setState({
+            ...this.state,
             editShow: !this.state.editShow
         })
     }
@@ -89,9 +104,6 @@ export default class Car extends Component {
             warningAlert("不能再减少了")
             return;
         } else {
-            console.log("=================================");
-            console.log(num);
-            console.log(this.isok);
             if (this.isok) {
                 this.isok = false;
                 reqCarEdit({ id: id, type: 1 }).then(res => {
@@ -99,9 +111,7 @@ export default class Car extends Component {
                         this.reqlist() // 重新渲染列表
                     }
                 })
-
             }
-
         }
     }
     // 增加数量
@@ -116,7 +126,7 @@ export default class Car extends Component {
         }
     }
     render() {
-        const { carlist, editShow, allShow, allpreis } = this.state
+        const { carlist, editShow, allpreis } = this.state
         return (
             <div className="car">
                 <Header title="购物车" back></Header>
@@ -155,14 +165,14 @@ export default class Car extends Component {
                 </div>) : null}
                 <div className="footer">
                     <div className="all" onClick={() => this.all()}>
-                        <div className={allShow ? "car_all_hig" : "car_all_nosel"}></div>
+                        <div className={this.allShow ? "car_all_hig" : "car_all_nosel"}></div>
                         <div>全选</div>
                     </div>
                     <div className="all" onClick={() => this.edit()}>
                         <div className={editShow ? "car_edit_hig" : "car_edit_nosel"}></div>
                         <div>编辑</div>
                     </div>
-                    <div className="all">合计：￥{allShow ? allpreis : 0}</div>
+                    <div className="all">合计：￥{allpreis}</div>
                     <div className="sum" onClick={() => this.sum()}>去结算</div>
                 </div>
             </div>
